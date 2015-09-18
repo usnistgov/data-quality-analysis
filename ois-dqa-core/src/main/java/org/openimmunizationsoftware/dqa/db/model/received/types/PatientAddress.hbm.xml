@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model.received.types">
+  <class name="PatientAddress" table="dqa_patient_address">
+    <id name="addressId" column="address_id">
+      <generator class="native">
+        <param name="sequence">dqa_address_id_sequence</param>
+      </generator>
+    </id>
+    <many-to-one name="patient" column="patient_id" class="org.openimmunizationsoftware.dqa.db.model.received.Patient"/>
+    <property name="positionId" column="position_id" type="int"/>
+    <property name="skipped" column="skipped" type="yes_no"/>
+    <property name="city" column="address_city" type="string"/>
+    <property name="countryCode" column="address_country" type="string"/>
+    <property name="countyParishCode" column="address_county_parish" type="string"/>
+    <property name="stateCode" column="address_state" type="string"/>
+    <property name="street" column="address_street" type="string"/>
+    <property name="street2" column="address_street2" type="string"/>
+    <property name="typeCode" column="address_type" type="string"/>
+    <property name="zip" column="address_zip" type="string"/>
+  </class>
+</hibernate-mapping>

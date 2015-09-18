@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model.received.types">
+  <class name="PatientImmunity" table="dqa_patient_immunity">
+    <id name="immunityId" column="immunity_id">
+      <generator class="native">
+        <param name="sequence">dqa_immunity_id_sequence</param>
+      </generator>
+    </id>
+    <many-to-one name="patient" column="patient_id" class="org.openimmunizationsoftware.dqa.db.model.received.Patient"/>
+    <property name="skipped" column="skipped" type="yes_no"/>
+    <property name="immunityCode" column="immunity_code" type="string"/>
+
+  </class>
+</hibernate-mapping>

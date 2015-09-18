@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+<!--      <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property> -->
+<!--     <property name="hibernate.connection.url">jdbc:mysql://localhost/dqa</property> -->
+<!--     <property name="hibernate.connection.username">dqa_web</property> -->
+<!--     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property> -->
+<!--     <property name="connection.password">QbxW8.E`</property> -->
+    <property name="hibernate.connection.driver_class">org.hsqldb.jdbcDriver</property>
+    <property name="hibernate.connection.url">jdbc:hsqldb:res:data/dqa_test</property>
+    <property name="hibernate.connection.username">sa</property>
+    <property name="hibernate.dialect">org.hibernate.dialect.HSQLDialect</property>
+    <property name="connection.password"></property>
+    <property name="hibernate.c3p0.acquire_increment">1</property>
+    <property name="hibernate.c3p0.idle_test_period">100</property><!--  seconds -->
+    <property name="hibernate.c3p0.timeout">100</property><!--  seconds -->
+    <property name="hibernate.c3p0.max_size">40</property>
+    <property name="hibernate.c3p0.min_size">5</property>
+    <property name="hibernate.c3p0.max_statements">10</property>
+    <mapping resource="org/openimmunizationsoftware/dqa/db/model/Application.hbm.xml"/>
+<!--     <mapping resource="org/openimmunizationsoftware/dqa/db/model/BatchActions.hbm.xml"/> -->
+<!--     <mapping resource="org/openimmunizationsoftware/dqa/db/model/BatchIssues.hbm.xml"/> -->
+<!--     <mapping resource="org/openimmunizationsoftware/dqa/db/model/BatchCodeReceived.hbm.xml"/> -->
+<!--     <mapping resource="org/openimmunizationsoftware/dqa/db/model/BatchReport.hbm.xml"/> -->
+<!--     <mapping resource="org/openimmunizationsoftware/dqa/db/model/BatchType.hbm.xml"/> -->
+<!--     <mapping resource="org/openimmunizationsoftware/dqa/db/model/BatchVaccineCvx.hbm.xml"/> -->
+    <mapping resource="org/openimmunizationsoftware/dqa/db/model/CodeMaster.hbm.xml"/>
+    <mapping resource="org/openimmunizationsoftware/dqa/db/model/CodeReceived.hbm.xml"/>
+    <mapping resource="org/openimmunizationsoftware/dqa/db/model/CodeStatus.hbm.xml"/>
+    <mapping resource="org/openimmunizationsoftware/dqa/db/model/CodeTable.hbm.xml"/>
+<!--     <mapping resource="org/openimmunizationsoftware/dqa/db/model/DatabaseLog.hbm.xml"/> -->
+    <mapping resource="org/openimmunizationsoftware/dqa/db/model/IssueAction.hbm.xml"/>
+<!--     <mapping resource="org/openimmunizationsoftware/dqa/db/model/IssueFound.hbm.xml"/>  -->
+    <mapping resource="org/openimmunizationsoftware/dqa/db/model/KeyedSetting.hbm.xml"/>
+    <mapping resource="org/openimmunizationsoftware/dqa/db/model/KnownName.hbm.xml"/>
+<!--     <mapping resource="org/openimmunizationsoftware/dqa/db/model/MessageBatch.hbm.xml"/> -->
+<!--     <mapping resource="org/openimmunizationsoftware/dqa/db/model/MessageHeader.hbm.xml"/> -->
+    <mapping resource="org/openimmunizationsoftware/dqa/db/model/MessageReceived.hbm.xml"/>
+<!--     <mapping resource="org/openimmunizationsoftware/dqa/db/model/Organization.hbm.xml"/> -->
+    <mapping resource="org/openimmunizationsoftware/dqa/db/model/PotentialIssue.hbm.xml"/>
+    <mapping resource="org/openimmunizationsoftware/dqa/db/model/PotentialIssueStatus.hbm.xml"/>
+<!--      <mapping resource="org/openimmunizationsoftware/dqa/db/model/RemoteConnection.hbm.xml"/> -->
+<!--     <mapping resource="org/openimmunizationsoftware/dqa/db/model/RemoteFile.hbm.xml"/> -->
+<!--     <mapping resource="org/openimmunizationsoftware/dqa/db/model/RemoteLog.hbm.xml"/> -->
+<!--     <mapping resource="org/openimmunizationsoftware/dqa/db/model/RemoteStat.hbm.xml"/> -->
+    <mapping resource="org/openimmunizationsoftware/dqa/db/model/ReportTemplate.hbm.xml"/> 
+    <mapping resource="org/openimmunizationsoftware/dqa/db/model/ReportType.hbm.xml"/>
+<!--      <mapping resource="org/openimmunizationsoftware/dqa/db/model/ReportVaccineGroup.hbm.xml"/> -->
+<!--     <mapping resource="org/openimmunizationsoftware/dqa/db/model/ReceiveQueue.hbm.xml"/>  -->
+<!--     <mapping resource="org/openimmunizationsoftware/dqa/db/model/Submission.hbm.xml"/>   -->
+<!--     <mapping resource="org/openimmunizationsoftware/dqa/db/model/SubmissionAnalysis.hbm.xml"/>   -->
+    <mapping resource="org/openimmunizationsoftware/dqa/db/model/SubmitStatus.hbm.xml"/> 
+    <mapping resource="org/openimmunizationsoftware/dqa/db/model/SubmitterProfile.hbm.xml"/>
+<!--     <mapping resource="org/openimmunizationsoftware/dqa/db/model/UserAccount.hbm.xml"/> -->
+<!--     <mapping resource="org/openimmunizationsoftware/dqa/db/model/received/Patient.hbm.xml"/> -->
+<!--     <mapping resource="org/openimmunizationsoftware/dqa/db/model/received/types/PatientAddress.hbm.xml"/> -->
+<!--     <mapping resource="org/openimmunizationsoftware/dqa/db/model/received/types/PatientIdNumber.hbm.xml"/> -->
+<!--     <mapping resource="org/openimmunizationsoftware/dqa/db/model/received/types/PatientImmunity.hbm.xml"/> -->
+<!--     <mapping resource="org/openimmunizationsoftware/dqa/db/model/received/types/PatientPhone.hbm.xml"/> -->
+    <mapping resource="org/openimmunizationsoftware/dqa/db/model/received/Vaccination.hbm.xml"/>
+    <mapping resource="org/openimmunizationsoftware/dqa/db/model/received/VaccinationVIS.hbm.xml"/>
+<!--     <mapping resource="org/openimmunizationsoftware/dqa/db/model/received/NextOfKin.hbm.xml"/> -->
+    <mapping resource="org/openimmunizationsoftware/dqa/db/model/VaccineProduct.hbm.xml"/>
+    <mapping resource="org/openimmunizationsoftware/dqa/db/model/VaccineMvx.hbm.xml"/>
+    <mapping resource="org/openimmunizationsoftware/dqa/db/model/VaccineCvx.hbm.xml"/>
+    <mapping resource="org/openimmunizationsoftware/dqa/db/model/VaccineCvxGroup.hbm.xml"/>
+    <mapping resource="org/openimmunizationsoftware/dqa/db/model/VaccineCpt.hbm.xml"/>
+    <mapping resource="org/openimmunizationsoftware/dqa/db/model/VaccineGroup.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

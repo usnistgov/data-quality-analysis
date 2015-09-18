@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model">
+  <class name="RemoteFile" table="dqa_remote_file">
+    <id name="fileId" column="file_id">
+      <generator class="native">
+        <param name="sequence">dqa_remote_file_id_sequence</param>
+      </generator>
+    </id>
+    <many-to-one name="remoteStat" column="stat_id" class="RemoteStat"/>
+    <property name="reportedDate" column="reported_date" type="timestamp"/>
+    <property name="fileName" column="file_name" type="string"/>
+    <property name="statusLabel" column="status_label" type="string"/>
+    <property name="messageCount" column="message_count" type="integer"/>
+    <property name="sentCount" column="sent_count" type="integer"/>
+    <property name="errorCount" column="error_count" type="integer"/>
+  </class>
+</hibernate-mapping>

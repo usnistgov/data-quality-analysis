@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model">
+  <class name="IssueFound" table="dqa_issue_found">
+    <id name="issueFoundId" column="issue_found_id">
+      <generator class="native">
+        <param name="sequence">dqa_issue_found_id_sequence</param>
+      </generator>
+    </id>
+    <many-to-one name="messageReceived" column="received_id" class="MessageReceived"/>
+    <many-to-one name="issue" column="issue_id" class="PotentialIssue"/>
+    <property name="positionId" column="position_id" type="integer"/>
+    <many-to-one name="issueAction" column="action_code" class="IssueAction"/>
+    <many-to-one name="codeReceived" column="code_id" class="CodeReceived"/>
+  </class>
+</hibernate-mapping>
+

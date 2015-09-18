@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model">
+  <class name="MessageBatch" table="dqa_message_batch">
+    <id name="batchId" column="batch_id">
+      <generator class="native">
+        <param name="sequence">dqa_batch_id_sequence</param>
+      </generator>
+    </id>
+    <property name="batchTitle" column="batch_title" type="string"/>
+    <many-to-one name="batchType" column="type_code" class="BatchType"/>
+    <property name="startDate" column="start_date" type="timestamp"/>
+    <property name="endDate" column="end_date" type="timestamp"/>
+    <many-to-one name="submitStatus" column="submit_code" class="SubmitStatus"/>
+    <many-to-one name="profile" column="profile_id" class="SubmitterProfile"/>
+  </class>
+</hibernate-mapping>

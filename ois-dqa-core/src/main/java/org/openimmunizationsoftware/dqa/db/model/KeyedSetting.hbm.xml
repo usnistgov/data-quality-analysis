@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model">
+  <class name="KeyedSetting" table="dqa_keyed_setting">
+    <id name="keyedId" column="keyed_id">
+      <generator class="native">
+        <param name="sequence">dqa_keyed_id_sequence</param>
+      </generator>
+    </id>
+    <property name="keyedCode" column="keyed_code" type="string"/>
+    <property name="objectCode" column="object_code" type="string"/>
+    <property name="objectId" column="object_id" type="integer"/>
+    <property name="keyedValue" column="keyed_value" type="string"/>
+  </class>
+</hibernate-mapping>

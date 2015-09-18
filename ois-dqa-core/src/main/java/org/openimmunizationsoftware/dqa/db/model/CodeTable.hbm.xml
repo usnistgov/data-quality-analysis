@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model">
+  <class name="CodeTable" table="dqa_code_table">
+    <id name="tableId" column="table_id">
+      <generator class="assigned"/>
+    </id>
+    <property name="tableLabel" column="table_label" type="string"/>
+    <property name="defaultCodeValue" column="default_code_value" type="string"/>
+  </class>
+</hibernate-mapping>

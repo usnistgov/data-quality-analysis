@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model">
+  <class name="Organization" table="dqa_organization">
+    <id name="orgId" column="org_id">
+      <generator class="native">
+        <param name="sequence">dqa_organization_id_sequence</param>
+      </generator>
+    </id>
+    <property name="orgLabel" column="org_label" type="string"/>
+    <many-to-one name="parentOrganization" column="org_parent_id" class="Organization"/>
+    <many-to-one name="primaryProfile" column="primary_profile_id" class="SubmitterProfile"/>
+    <property name="orgLocalCode" column="org_local_code" type="string"/>
+  </class>
+</hibernate-mapping>

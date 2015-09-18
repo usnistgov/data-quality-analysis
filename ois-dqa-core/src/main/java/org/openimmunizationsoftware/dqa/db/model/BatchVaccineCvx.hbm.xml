@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model">
+  <class name="BatchVaccineCvx" table="dqa_batch_vaccine_cvx">
+    <id name="batchVaccineCvxId" column="batch_vaccine_cvx_id">
+      <generator class="native">
+        <param name="sequence">dqa_batch_vaccine_cvx_sequence</param>
+      </generator>
+    </id>
+    <many-to-one name="messageBatch" column="batch_id" class="MessageBatch"/>
+    <many-to-one name="vaccineCvx" column="cvx_id" class="VaccineCvx"/>
+    <property name="receivedCount" column="received_count" type="integer"/>
+  </class>
+</hibernate-mapping>

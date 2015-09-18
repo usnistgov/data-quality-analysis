@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model">
+  <class name="ReceiveQueue" table="dqa_receive_queue">
+    <id name="receiveQueueId" column="receive_queue_id">
+      <generator class="native">
+        <param name="sequence">dqa_receive_queue_id_sequence</param>
+      </generator>
+    </id>
+    <many-to-one name="messageBatch" column="batch_id" class="MessageBatch"/>
+    <many-to-one name="messageReceived" column="received_id" class="MessageReceived"/>
+    <many-to-one name="submitStatus" column="submit_code" class="SubmitStatus"/>
+  </class>
+</hibernate-mapping>

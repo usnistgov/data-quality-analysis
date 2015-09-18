@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model.received">
+  <class name="VaccinationVIS" table="dqa_vaccination_vis">
+    <id name="visId" column="vis_id">
+      <generator class="native">
+        <param name="sequence">dqa_vacc_vis_id_sequence</param>
+      </generator>
+    </id>
+    <many-to-one name="vaccination" column="vaccination_id" class="org.openimmunizationsoftware.dqa.db.model.received.Vaccination"/>
+    <property name="positionId" column="position_id" type="int"/>
+    <property name="skipped" column="skipped" type="yes_no"/>
+    <property name="documentCode" column="document_code" type="string"/>
+    <property name="cvxCode" column="cvx_code" type="string"/>
+    <property name="publishedDate" column="published_date" type="date"/>
+    <property name="presentedDate" column="presented_date" type="date"/>
+  </class>
+</hibernate-mapping>

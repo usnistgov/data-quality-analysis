@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model">
+  <class name="RemoteConnection" table="dqa_remote_connection">
+    <id name="connectionId" column="connection_id">
+      <generator class="native">
+        <param name="sequence">dqa_remote_conn_id_sequence</param>
+      </generator>
+    </id>
+    <property name="connectionLabel" column="connection_label" type="string"/>
+    <property name="connectionCode" column="connection_code" type="string"/>
+    <property name="supportCenterCode" column="support_center_code" type="string"/>
+    <property name="locationTo" column="location_to" type="string"/>
+    <property name="locationFrom" column="location_from" type="string"/>
+    <property name="accountName" column="account_name" type="string"/>
+    <property name="logLevel" column="log_level" type="integer"/>
+  </class>
+</hibernate-mapping>

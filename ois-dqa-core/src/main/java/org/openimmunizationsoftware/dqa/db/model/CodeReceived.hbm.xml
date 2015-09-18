@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model">
+  <class name="CodeReceived" table="dqa_code_received">
+    <id name="codeId" column="code_id">
+      <generator class="native">
+        <param name="sequence">dqa_code_id_sequence</param>
+      </generator>
+    </id>
+    <property name="codeLabel" column="code_label" type="string"/>
+    <property name="contextValue" column="context_value" type="string"/>
+    <many-to-one name="profile" column="profile_id" class="SubmitterProfile"/>
+    <many-to-one name="table" column="table_id" class="CodeTable" lazy="false"/>
+    <property name="receivedValue" column="received_value" type="string"/>
+    <property name="codeValue" column="code_value" type="string"/>
+    <many-to-one name="codeStatus" column="code_status" class="CodeStatus" lazy="false"/>
+    <property name="receivedCount" column="received_count" type="integer"/>
+  </class>
+</hibernate-mapping>

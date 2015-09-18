@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model">
+  <class name="IssueAction" table="dqa_issue_action">
+    <id name="actionCode" column="action_code">
+      <generator class="assigned"/>
+    </id>
+    <property name="actionLabel" column="action_label" type="string"/>
+  </class>
+</hibernate-mapping>

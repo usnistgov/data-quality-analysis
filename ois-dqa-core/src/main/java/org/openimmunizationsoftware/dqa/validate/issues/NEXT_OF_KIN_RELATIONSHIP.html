@@ -1,0 +1,31 @@
+<h3>Next of Kin Relationship</h3>
+
+<div class="dottedbox">
+	<p>The relationship from the patient to the Next-of-Kin. For
+		children, a next-of-kin can be used to represent the child's parent or
+		guardian. Finding the parent or guardian for a child-aged patient is
+		critical for proper identification of children and for determining the
+		point-of-contact for immunization out reach activities.</p>
+	<p>The first step that the DQA takes when reading the Next-of-Kin
+		is to determine if the patient is under-age or not. The under-age
+		threshold is determined by IIS policy but is generally 18 years old.
+		If the patient is under-age the following checks will be made:</p>
+	<ul>
+		<li>Is the Next-of-Kin relationship one of the unexpected values?
+			For children the DQA does not expect the sender to identify a Child,
+			Foster-Child, or Step-Child relationship. If these values are being
+			sent the DQA suspects that the sending system is using this field in
+			reverse of the standard and identifying the relationship from the
+			Next-of-Kin to the patient. If the Next-of-Kin is the patient's
+			parent, then Child is the incorrect relationship.</li>
+		<li>Is the Next-of-Kin relationship a value that is recognized as
+			someone who could potentially to be a responsible party for the
+			patient's care? Possible values include: Mother, Care Giver, Father,
+			Grandparent, Parent, or Guardian.</li>
+		<li>If the relationship is some other value, such as Brother or
+			Sister, it is ignored.</li>
+	</ul>
+	<p>Later in the process one responsible party will be selected as
+		the first Next-of-Kin with a qualifying responsible party
+		relationship.</p>
+</div>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model">
+  <class name="CodeMaster" table="dqa_code_master">
+    <id name="codeMasterId" column="code_master_id">
+      <generator class="native">
+        <param name="sequence">dqa_code_master_id_sequence</param>
+      </generator>
+    </id>
+    <many-to-one name="context" column="context_id" class="CodeMaster" lazy="false"/>
+    <many-to-one name="table" column="table_id" class="CodeTable" lazy="false"/>
+    <property name="codeValue" column="code_value" type="string"/>
+    <property name="codeLabel" column="code_label" type="string"/>
+    <property name="useValue" column="use_value" type="string"/>
+    <many-to-one name="codeStatus" column="code_status" class="CodeStatus" lazy="false"/>
+    <many-to-one name="indicates" column="indicates_id" class="CodeTable" lazy="false"/>
+  </class>
+</hibernate-mapping>

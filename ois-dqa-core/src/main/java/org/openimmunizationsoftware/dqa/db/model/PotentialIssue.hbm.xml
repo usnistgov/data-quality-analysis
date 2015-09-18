@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model">
+  <class name="PotentialIssue" table="dqa_potential_issue">
+    <id name="issueId" column="issue_id">
+      <generator class="assigned"/>
+    </id>
+    <property name="targetObject" column="target_object" type="string"/>
+    <property name="targetField"  column="target_field"  type="string"/>
+    <property name="issueType"    column="issue_type"    type="string"/>
+    <property name="fieldValue"   column="field_value"   type="string"/>
+    <many-to-one name="defaultIssueAction" column="default_action_code" class="IssueAction" lazy="false"/>
+    <property name="changePriority" column="change_priority" type="string"/>
+    <property name="reportDenominator" column="report_denominator" type="string"/>
+    <property name="issueDescription" column="issue_description" type="string"/>
+    <!-- <many-to-one name="table" column="table_id" class="CodeTable" lazy="false"/> -->
+    <property name="hl7Reference" column="hl7_reference" type="string"/>
+    <property name="hl7ErrorCode" column="hl7_error_code" type="string"/>
+    <property name="appErrorCode" column="app_error_code" type="string"/>
+  </class>
+</hibernate-mapping>

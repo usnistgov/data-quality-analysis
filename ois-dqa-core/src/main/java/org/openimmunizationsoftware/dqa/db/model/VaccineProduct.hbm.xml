@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model">
+  <class name="VaccineProduct" table="dqa_vaccine_product">
+    <id name="productId" column="product_id">
+      <generator class="assigned"/>
+    </id>
+    <property name="productName" column="product_name" type="string"/>
+    <property name="productLabel" column="product_label" type="string"/>
+    <many-to-one name="cvx" column="cvx_id" class="VaccineCvx" lazy="false"/>
+    <many-to-one name="mvx" column="mvx_code" class="VaccineMvx" lazy="false"/>
+    <property name="validStartDate" column="valid_start_date" type="date"/>
+    <property name="useStartDate" column="use_start_date" type="date"/>
+    <property name="useEndDate" column="use_end_date" type="date"/>
+    <property name="validEndDate" column="valid_end_date" type="date"/>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model">
+  <class name="MessageHeader" table="dqa_message_header">
+    <id name="headerId" column="header_id">
+      <generator class="native">
+        <param name="sequence">dqa_header_id_sequence</param>
+      </generator>
+    </id>
+    <many-to-one name="messageReceived" column="received_id" class="MessageReceived"/>
+    <property name="ackTypeAcceptCode" column="ack_type_accept" type="string"/>
+    <property name="ackTypeApplicationCode" column="ack_type_application" type="string"/>
+    <property name="characterSetCode" column="character_set" type="string"/>
+    <property name="countryCode" column="country_code" type="string"/>
+    <property name="messageControl" column="message_control" type="string"/>
+    <property name="messageDate" column="message_date" type="timestamp"/>
+    <property name="messageProfile" column="message_profile" type="string"/>
+    <property name="messageStructure" column="message_structure" type="string"/>
+    <property name="messageTrigger" column="message_trigger" type="string"/>
+    <property name="messageType" column="message_type" type="string"/>
+    <property name="messageVersion" column="message_version" type="string"/>
+    <property name="processingStatusCode" column="processing_status" type="string"/>
+    <property name="receivingApplication" column="receiving_application" type="string"/>
+    <property name="receivingFacility" column="receiving_facility" type="string"/>
+    <property name="sendingApplication" column="sending_application" type="string"/>
+    <property name="sendingFacility" column="sending_facility" type="string"/>
+  </class>
+</hibernate-mapping>

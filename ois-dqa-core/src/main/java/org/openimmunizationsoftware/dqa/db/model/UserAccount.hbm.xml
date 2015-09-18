@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model">
+  <class name="UserAccount" table="dqa_user_account">
+    <id name="username" column="username">
+    	<generator class="assigned"/>
+    </id>
+    <property name="password" column="password" type="string"/>
+    <property name="accountType" column="account_type" type="string"/>
+    <many-to-one name="organization" column="org_id" class="Organization"/>
+    <property name="email" column="email" type="string"/>
+  </class>
+</hibernate-mapping>

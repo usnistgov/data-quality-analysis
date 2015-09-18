@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model">
+  <class name="RemoteLog" table="dqa_remote_log">
+    <id name="logId" column="log_id">
+      <generator class="native">
+        <param name="sequence">dqa_remote_log_id_sequence</param>
+      </generator>
+    </id>
+    <many-to-one name="remoteStat" column="stat_id" class="RemoteStat"/>
+    <property name="reportedDate" column="reported_date" type="timestamp"/>
+    <property name="logLevel" column="log_level" type="integer"/>
+    <property name="issueText" column="issue_text" type="string"/>
+    <property name="exceptionTrace" column="exception_trace" type="string"/>
+    
+  </class>
+</hibernate-mapping>

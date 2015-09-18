@@ -1,0 +1,23 @@
+<h3>Patient Phone</h3>
+
+<div class="dottedbox">
+	<p>The primary phone for the patient or the patient's
+		parent/guardian.</p>
+	<p>
+		The DQA validates phone numbers for those using the <a
+			href="http://en.wikipedia.org/wiki/North_American_Numbering_Plan">North
+			American Numbering Plan</a>. All other phone numbers, such as
+		international phone numbers, are not currently validated. The
+		following basic checks are made if the phone number is not empty:
+
+	</p>
+	<ul>
+		<li>If area code is specified then must be 3 digits long and the
+			first digit may not be a 1 or 0.</li>
+		<li>The local number must contain exactly 7 numeric digits. Other
+			non-digit characters are ignored.</li>
+		<li>The 1st local number digit can not be a 1 or a 0.</li>
+		<li>The 2nd and 3rd local number can not be both 1. (For example:
+			411 and 511 are not valid exchange numbers.)</li>
+	</ul>
+</div>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model">
+  <class name="VaccineMvx" table="dqa_vaccine_mvx">
+    <id name="mvxCode" column="mvx_code" type="string">
+      <generator class="assigned"/>
+    </id>
+    <property name="mvxLabel" column="mvx_label" type="string"/>
+    <property name="validStartDate" column="valid_start_date" type="date"/>
+    <property name="useStartDate" column="use_start_date" type="date"/>
+    <property name="useEndDate" column="use_end_date" type="date"/>
+    <property name="validEndDate" column="valid_end_date" type="date"/>
+  </class>
+</hibernate-mapping>

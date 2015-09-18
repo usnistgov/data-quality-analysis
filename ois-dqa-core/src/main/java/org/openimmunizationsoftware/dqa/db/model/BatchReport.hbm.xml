@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model">
+  <class name="BatchReport" table="dqa_batch_report">
+    <id name="batchReportId" column="batch_report_id">
+      <generator class="native">
+        <param name="sequence">dqa_batch_report_id_sequence</param>
+      </generator>
+    </id>
+    <many-to-one name="messageBatch" column="batch_id" class="MessageBatch"/>
+    <property name="completenessPatientScore" column="comp_patient_score" type="integer"/>
+    <property name="completenessScore" column="comp_score" type="integer"/>
+    <property name="completenessVaccinationScore" column="comp_vaccination_score" type="integer"/>
+    <property name="completenessVaccineGroupScore" column="comp_vaccine_group_score" type="integer"/>
+    <property name="messageCount" column="message_count" type="integer"/>
+    <property name="messageWithAdminCount" column="message_with_admin_count" type="integer"/>
+    <property name="nextOfKinCount" column="next_of_kin_count" type="integer"/>
+    <property name="overallScore" column="overall_score" type="integer"/>
+    <property name="patientCount" column="patient_count" type="integer"/>
+    <property name="patientUnderageCount" column="patient_underage_count" type="integer"/>
+    <property name="qualityErrorScore" column="qual_error_score" type="integer"/>
+    <property name="qualityScore" column="qual_score" type="integer"/>
+    <property name="qualityWarnScore" column="qual_warn_score" type="integer"/>
+    <property name="timelinessCountEarly" column="time_count_early" type="integer"/>
+    <property name="timelinessCountOnTime" column="time_count_on_time" type="integer"/>
+    <property name="timelinessCountLate" column="time_count_late" type="integer"/>
+    <property name="timelinessCountVeryLate" column="time_count_very_late" type="integer"/>
+    <property name="timelinessCountOldData" column="time_count_old_data" type="integer"/>
+    <property name="timelinessScore" column="time_score" type="integer"/>
+    <property name="timelinessScoreEarly" column="time_score_early" type="integer"/>
+    <property name="timelinessScoreOnTime" column="time_score_on_time" type="integer"/>
+    <property name="timelinessScoreLate" column="time_score_late" type="integer"/>
+    <property name="timelinessScoreVeryLate" column="time_score_very_late" type="integer"/>
+    <property name="vaccinationAdministeredCount" column="vacc_admin_count" type="integer"/>
+    <property name="vaccinationDeleteCount" column="vacc_delete_count" type="integer"/>
+    <property name="vaccinationHistoricalCount" column="vacc_historical_count" type="integer"/>
+    <property name="vaccinationNotAdministeredCount" column="vacc_not_admin_count" type="integer"/>
+    <property name="vaccinationRefusalCount" column="vacc_refusal_count" type="integer"/>
+    <property name="vaccinationVisCount" column="vacc_vis_count" type="integer"/>
+    <property name="observationCount" column="obs_count" type="integer"/>
+    <property name="timelinessAverage" column="time_average" type="double"/>
+    <property name="timelinessDateFirst" column="time_date_first" type="date"/>
+    <property name="timelinessDateLast" column="time_date_last" type="date"/>
+  </class>
+</hibernate-mapping>

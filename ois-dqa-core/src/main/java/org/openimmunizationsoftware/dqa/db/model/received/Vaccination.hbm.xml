@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model.received">
+  <class name="Vaccination" table="dqa_vaccination">
+    <id name="vaccinationId" column="vaccination_id">
+      <generator class="native">
+        <param name="sequence">dqa_vaccination_id_sequence</param>
+      </generator>
+    </id>
+    <many-to-one name="messageReceived" column="received_id" class="org.openimmunizationsoftware.dqa.db.model.MessageReceived"/>
+    <property name="positionId" column="position_id" type="int"/>
+    <property name="adminCptCode" column="admin_code_cpt" type="string"/>
+    <property name="adminCvxCode" column="admin_code_cvx" type="string"/>
+    <property name="adminDate" column="admin_date" type="date"/>
+    <property name="amount" column="amount" type="string"/>
+    <property name="amountUnitCode" column="amount_unit_code" type="string"/>
+    <property name="bodyRouteCode" column="body_site_code" type="string"/>
+    <property name="bodySiteCode" column="body_route_code" type="string"/>
+    <property name="completionCode" column="completion_status_code" type="string"/>
+    <property name="confidentialityCode" column="confidentiality_code" type="string"/>
+    <property name="enteredByNumber" column="entered_by_number" type="string"/>
+    <property name="enteredByNameFirst" column="entered_by_name_first" type="string"/>
+    <property name="enteredByNameLast" column="entered_by_name_last" type="string"/>
+    <property name="expirationDate" column="expiration_date" type="date"/>
+    <property name="facilityIdNumber" column="facility_id" type="string"/>
+    <property name="facilityName" column="facility_name" type="string"/>
+    <property name="facilityTypeCode" column="facility_type_code" type="string"/>
+    <property name="financialEligibilityCode" column="financial_eligibility_code" type="string"/>
+    <property name="givenByNumber" column="given_by_number" type="string"/>
+    <property name="givenByNameLast" column="given_by_name_last" type="string"/>
+    <property name="givenByNameFirst" column="given_by_name_first" type="string"/>
+    <property name="idSubmitter" column="id_submitter" type="string"/>
+    <property name="informationSourceCode" column="information_source_code" type="string"/>
+    <property name="lotNumber" column="lot_number" type="string"/>
+    <property name="manufacturerCode" column="manufacturer_code" type="string"/>
+    <property name="orderedByNumber" column="ordered_by_number" type="string"/>
+    <property name="refusalCode" column="refusal_code" type="string"/>
+    <property name="systemEntryDate" column="system_entry_date" type="date"/>
+    <property name="visPublicationDate" column="vis_publication_date" type="date"/>
+    <property name="visPresentedDate" column="vis_presented_date" type="date"/>
+    <property name="visDocumentCode" column="vis_document_code" type="string"/>
+    <property name="orderControlCode" column="order_control_code" type="string"/>
+    <property name="skipped" column="skipped" type="yes_no"/>
+    <property name="actionCode" column="action_code" type="string"/>
+    <property name="tradeNameCode" column="trade_name_code" type="string"/>
+    <property name="vaccineValidityCode" column="vaccine_validity_code" type="string"/>
+  </class>
+</hibernate-mapping>

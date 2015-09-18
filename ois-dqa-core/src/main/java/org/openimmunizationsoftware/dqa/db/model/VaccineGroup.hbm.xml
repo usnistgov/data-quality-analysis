@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model">
+  <class name="VaccineGroup" table="dqa_vaccine_group">
+    <id name="groupId" column="group_id" type="int">
+      <generator class="native">
+        <param name="sequence">dqa_report_vac_group_id_seq</param>
+      </generator>
+    </id>
+    <property name="groupCode" column="group_code" type="string"/>
+    <property name="groupLabel" column="group_label" type="string"/>
+  </class>
+</hibernate-mapping>

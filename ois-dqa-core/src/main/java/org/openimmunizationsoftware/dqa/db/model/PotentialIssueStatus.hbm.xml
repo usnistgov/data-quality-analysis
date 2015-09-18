@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model">
+  <class name="PotentialIssueStatus" table="dqa_potential_issue_status">
+    <id name="potentialIssueStatusId" column="potential_issue_status_id">
+      <generator class="native">
+        <param name="sequence">dqa_potential_status_id_seq</param>
+      </generator>
+    </id>
+    <many-to-one name="issue" column="issue_id" class="PotentialIssue" lazy="false"/>
+    <many-to-one name="profile" column="profile_id" class="SubmitterProfile" lazy="false"/>
+    <many-to-one name="action" column="action_code" class="IssueAction" lazy="false"/>
+    <property name="expectMin" column="expect_min" type="integer"/>
+    <property name="expectMax" column="expect_max" type="integer"/>
+  </class>
+</hibernate-mapping>

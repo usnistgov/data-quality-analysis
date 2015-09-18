@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model">
+  <class name="ReportTemplate" table="dqa_report_template">
+    <id name="templateId" column="template_id">
+      <generator class="native">
+        <param name="sequence">dqa_template_id_sequence</param>
+      </generator>
+    </id>
+    <property name="templateLabel" column="template_label" type="string"/>
+    <many-to-one name="reportType" column="report_type_id" class="ReportType"/>
+    <property name="reportDefinition" column="report_definition" type="string"/>
+    <many-to-one name="baseProfile" column="base_profile_id" class="SubmitterProfile"/>
+    <property name="testCaseScript" column="test_case_script" type="string"/>
+  </class>
+</hibernate-mapping>

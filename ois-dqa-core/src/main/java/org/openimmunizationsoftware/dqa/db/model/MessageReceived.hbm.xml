@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model">
+  <class name="MessageReceived" table="dqa_message_received">
+    <id name="receivedId" column="received_id">
+      <generator class="native">
+        <param name="sequence">dqa_message_received_sequence</param>
+      </generator>
+    </id>
+    <many-to-one name="profile" column="profile_id" class="SubmitterProfile"/>
+    <property name="receivedDate" column="received_date" type="timestamp"/>
+    <property name="requestText" column="request_text" type="string"/>
+    <property name="responseText" column="response_text" type="string"/>
+    <many-to-one name="issueAction" column="action_code" class="IssueAction"/>
+    <many-to-one name="submitStatus" column="submit_code" class="SubmitStatus"/>
+    <property name="messageKey" column="message_key" type="string"/>
+  </class>
+</hibernate-mapping>
+

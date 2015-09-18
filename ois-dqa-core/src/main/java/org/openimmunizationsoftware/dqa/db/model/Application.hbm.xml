@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model">
+  <class name="Application" table="dqa_application">
+    <id name="applicationId" column="application_id">
+      <generator class="assigned"/>
+    </id>
+    <property name="applicationLabel" column="application_label" type="string"/>
+    <property name="applicationType" column="application_type" type="string"/>
+    <property name="runThis" column="run_this" type="yes_no"/>
+    <many-to-one name="primaryReportTemplate" column="primary_template_id" class="ReportTemplate"/>
+    
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model.received">
+  <class name="Patient" table="dqa_patient">
+    <id name="patientId" column="patient_id">
+      <generator class="native">
+        <param name="sequence">dqa_patient_id_sequence</param>
+      </generator>
+    </id>
+    <many-to-one name="messageReceived" column="received_id" class="org.openimmunizationsoftware.dqa.db.model.MessageReceived"/>
+    <property name="addressCity" column="address_city" type="string"/>
+    <property name="addressCountryCode" column="address_country" type="string"/>
+    <property name="addressCountyParishCode" column="address_county_parish" type="string"/>
+    <property name="addressStateCode" column="address_state" type="string"/>
+    <property name="addressStreet" column="address_street" type="string"/>
+    <property name="addressStreet2" column="address_street2" type="string"/>
+    <property name="addressTypeCode" column="address_type" type="string"/>
+    <property name="addressZip" column="address_zip" type="string"/>
+    <property name="aliasFirst" column="alias_first" type="string"/>
+    <property name="aliasLast" column="alias_last" type="string"/>
+    <property name="aliasMiddle" column="alias_middle" type="string"/>
+    <property name="aliasPrefix" column="alias_prefix" type="string"/>
+    <property name="aliasSuffix" column="alias_suffix" type="string"/>
+    <property name="aliasTypeCode" column="alias_type_code" type="string"/>
+    <property name="birthDate" column="birth_date" type="date"/>
+    <property name="birthMultiple" column="birth_muliple" type="string"/>
+    <property name="birthOrderCode" column="birth_order" type="string"/>
+    <property name="birthPlace" column="birth_place" type="string"/>
+    <property name="deathDate" column="death_date" type="date"/>
+    <property name="deathIndicator" column="death_indicator" type="string"/>
+    <property name="ethnicityCode" column="ethnicity_code" type="string"/>
+    <property name="facilityIdNumber" column="facility_id" type="string"/>
+    <property name="facilityName" column="facility_name" type="string"/>
+    <property name="financialEligibilityCode" column="financial_eligibility" type="string"/>
+    <property name="financialEligibilityDate" column="financial_eligibility_date" type="date"/>
+    <property name="idMedicaidNumber" column="id_medicaid" type="string"/>
+    <property name="idSsnNumber" column="id_ssn" type="string"/>
+    <property name="idSubmitterAssigningAuthorityCode" column="id_submitter_assign_auth" type="string"/>
+    <property name="idSubmitterNumber" column="id_submitter_number" type="string"/>
+    <property name="idSubmitterTypeCode" column="id_submitter_type_code" type="string"/>
+    <property name="motherMaidenName" column="mother_maiden_name" type="string"/>
+    <property name="nameFirst" column="name_first" type="string"/>
+    <property name="nameLast" column="name_last" type="string"/>
+    <property name="nameMiddle" column="name_middle" type="string"/>
+    <property name="namePrefix" column="name_prefix" type="string"/>
+    <property name="nameSuffix" column="name_suffix" type="string"/>
+    <property name="nameTypeCode" column="name_type_code" type="string"/>
+    <property name="phoneNumber" column="phone_number" type="string"/>
+    <property name="physicianNameFirst" column="physician_name_first" type="string"/>
+    <property name="physicianNameLast" column="physician_name_last" type="string"/>
+    <property name="physicianNumber" column="physician_number" type="string"/>
+    <property name="primaryLanguageCode" column="primary_language_code" type="string"/>
+    <property name="protectionCode" column="protection_code" type="string"/>
+    <property name="publicityCode" column="publicity_code" type="string"/>
+    <property name="raceCode" column="race_code" type="string"/>
+    <property name="registryStatusCode" column="registry_status" type="string"/>
+    <property name="sexCode" column="sex_code" type="string"/>
+    <property name="skipped" column="skipped" type="yes_no"/>
+    <property name="systemCreationDate" column="system_creation_date" type="timestamp"/>
+  </class>
+</hibernate-mapping>

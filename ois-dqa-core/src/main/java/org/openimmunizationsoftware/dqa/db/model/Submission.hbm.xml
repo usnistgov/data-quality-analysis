@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model">
+  <class name="Submission" table="dqa_submission">
+    <id name="submissionId" column="submission_id">
+      <generator class="native">
+        <param name="sequence">dqa_submission_id_sequence</param>
+      </generator>
+    </id>
+    <property name="submitterName" column="submitter_name" type="string"/>
+    <property name="requestContent" column="request_content" type="clob"/>
+    <property name="requestName" column="request_name" type="string"/>
+    <many-to-one name="profile" column="profile_id" class="SubmitterProfile"/>
+    <property name="returnResponse" column="return_response" type="yes_no"/>
+    <property name="returnDetailLog" column="return_detail_log" type="yes_no"/>
+    <property name="returnDetailError" column="return_detail_error" type="yes_no"/>
+    <property name="returnReport" column="return_report" type="yes_no"/>
+    <property name="returnAnalysis" column="return_analysis" type="yes_no"/>
+    <property name="responseContent" column="response_content" type="clob"/>
+    <property name="responseDetailLog" column="response_detail_log" type="clob"/>
+    <property name="responseDetailError" column="response_detail_error" type="clob"/>
+    <property name="responseReport" column="response_report" type="clob"/>
+    <property name="responseAnalysis" column="response_analysis" type="clob"/>
+     <many-to-one name="batch" column="batch_id" class="MessageBatch"/>
+    <property name="submissionStatus" column="submission_status" type="string"/>
+    <property name="submissionStatusDate" column="submission_status_date" type="timestamp"/>
+    <property name="createdDate" column="created_date" type="timestamp"/>
+    <property name="submitterDefinedValue1" column="submitter_defined_value1" type="string"/>
+    <property name="submitterDefinedValue2" column="submitter_defined_value2" type="string"/>
+  </class>
+</hibernate-mapping>

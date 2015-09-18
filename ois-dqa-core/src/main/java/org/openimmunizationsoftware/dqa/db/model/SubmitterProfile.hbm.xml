@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model">
+  <class name="SubmitterProfile" table="dqa_submitter_profile">
+    <id name="profileId" column="profile_id">
+      <generator class="native">
+        <param name="sequence">dqa_profile_id_sequence</param>
+      </generator>
+    </id>
+    <property name="profileCode" column="profile_code" type="string"/>
+    <property name="profileLabel" column="profile_label" type="string"/>
+    <property name="profileStatus" column="profile_status" type="string"/>
+    <!-- <many-to-one name="organization" column="org_id" class="Organization"/> -->
+    <property name="dataFormat" column="data_format" type="string"/>
+    <property name="transferPriority" column="transfer_priority" type="string"/>
+    <property name="accessKey" column="access_key" type="string"/>
+    <many-to-one name="reportTemplate" column="template_id" class="ReportTemplate"/>
+  </class>
+</hibernate-mapping>

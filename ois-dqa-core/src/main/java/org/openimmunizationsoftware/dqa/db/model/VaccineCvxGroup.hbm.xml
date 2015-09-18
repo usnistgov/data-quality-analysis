@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.openimmunizationsoftware.dqa.db.model">
+  <class name="VaccineCvxGroup" table="dqa_vaccine_cvx_group">
+    <id name="cvxGroupId" column="cvx_group_id" type="int">
+      <generator class="native">
+        <param name="sequence">dqa_cvx_group_id_sequence</param>
+      </generator>
+    </id>
+    <many-to-one name="vaccineCvx" column="cvx_id" class="VaccineCvx" lazy="false"/>
+    <many-to-one name="vaccineGroup" column="group_id" class="VaccineGroup" lazy="false"/>
+  </class>
+</hibernate-mapping>
