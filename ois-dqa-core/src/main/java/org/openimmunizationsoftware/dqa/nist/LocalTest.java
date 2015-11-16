@@ -20,7 +20,7 @@ public class LocalTest {
 			for(int i = 0; i < 1; i++){
 				
 				
-				test = new String(readAllBytes(get("msgtst")));
+				test = new String(readAllBytes(get("msgtest")));
 				CompactReportModel cc= ProcessMessageHL7.getInstance().process(test, "1223");
 				System.out.println(cc);
 			}

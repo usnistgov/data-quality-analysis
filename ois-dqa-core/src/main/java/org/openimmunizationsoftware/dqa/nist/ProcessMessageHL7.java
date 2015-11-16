@@ -55,7 +55,8 @@ public class ProcessMessageHL7 {
 			//System.out.println(parser.makeAckMessage(messageReceived));
 			CompactReportModel crm = new CompactReportModel();
 			//System.out.println("Number of issues : "+messageReceived.getIssuesFound().size());
-			for(IssueFound is : messageReceived.getIssuesFound())
+			List<IssueFound> x = messageReceived.getIssuesFound();
+			for(IssueFound is : x)
 			{
 				if(/*!is.isSkip() &&*/ !is.isAccept())
 				{

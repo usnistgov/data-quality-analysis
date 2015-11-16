@@ -236,9 +236,9 @@ public class Validator extends ValidateMessage
     }
     if (notEmptyFirst && notEmptyLast && patientUnderAged && isResponsibleParty)
     {
+    	
       if (areEqual(nextOfKin.getNameLast(), patient.getNameLast()) && areEqual(nextOfKin.getNameFirst(), patient.getNameFirst())
-          && areEqual(nextOfKin.getNameMiddle(), patient.getNameMiddle()) && areEqual(nextOfKin.getNameSuffix(), patient.getNameMiddle())
-          && areEqual(nextOfKin.getNameSuffix(), patient.getNameSuffix()))
+          && areEqual(nextOfKin.getNameMiddle(), patient.getNameMiddle()) &&  areEqual(nextOfKin.getNameSuffix(), patient.getNameSuffix()))
       {
         registerIssue(pi.PatientGuardianNameIsSameAsUnderagePatient,patient.getName().locate("this"));
       }
@@ -1234,7 +1234,6 @@ public class Validator extends ValidateMessage
     handle++;
     notEmpty(patient.getBirthPlace(), pi.PatientBirthPlaceIsMissing,patient.locate("this"),patient.locate("birthPlace"));
     handleCodeReceived(patient.getEthnicity(), PotentialIssues.Field.PATIENT_ETHNICITY);
-
     if (patient.getNameFirst().length() > 3 && patient.getNameMiddle().length() == 0)
     {
       int pos = patient.getNameFirst().lastIndexOf(' ');
