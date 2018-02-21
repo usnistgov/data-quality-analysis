@@ -46,7 +46,7 @@
 		<dependency>
 			<groupId>gov.nist.healthcare.hl7.v2.unifiedreport</groupId>
 			<artifactId>report</artifactId>
-			<version>0.0.7-SNAPSHOT</version>
+			<version>1.0.4</version>
 			<optional>true</optional>
 		</dependency>
 <!-- 		<dependency> -->
@@ -78,14 +78,15 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>4.3.0.Final</version>
+			<version>5.2.10.FINAL</version>
 			<type>pom</type>
 		</dependency>
 		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-c3p0</artifactId>
-			<version>4.3.0.Final</version>
-		</dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-c3p0</artifactId>
+    <version>5.2.10.Final</version>
+</dependency>
+
 		<!-- <dependency> <groupId>com.oracle</groupId> <artifactId>oracle</artifactId> 
 			<version>10.2.0</version> </dependency> -->
 		<!-- <dependency> <groupId>mysql</groupId> <artifactId>mysql-connector-java</artifactId> 

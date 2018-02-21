@@ -121,7 +121,7 @@ public class SubmitterProfile implements Serializable
     if (potentialIssueStatusMap == null)
     {
       potentialIssueStatusMap = new HashMap<PotentialIssue, PotentialIssueStatus>();
-      Query query = session.createQuery("from PotentialIssueStatus where profile = ?");
+      Query query = session.createQuery("from PotentialIssueStatus where profile = ?0");
       query.setParameter(0, this);
       List<PotentialIssueStatus> potentialIssueStatusList = query.list();
       for (PotentialIssueStatus pis : potentialIssueStatusList)

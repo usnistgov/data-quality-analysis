@@ -2041,10 +2041,10 @@ public class PotentialIssues implements Reload
   private PotentialIssue getPotentialIssue(Session session, String targetObject, String targetField, String issueType, String fieldValue)
   {
     PotentialIssue pi;
-    String sql = "from PotentialIssue where targetObject = ? and targetField = ? and issueType = ?";
+    String sql = "from PotentialIssue where targetObject = ?0 and targetField = ?1 and issueType = ?2";
     if (!fieldValue.equals(""))
     {
-      sql += " and fieldValue = ?";
+      sql += " and fieldValue = ?3";
     }
     Query query = session.createQuery(sql);
     query.setParameter(0, targetObject);

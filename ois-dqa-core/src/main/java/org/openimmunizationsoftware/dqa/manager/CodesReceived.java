@@ -77,7 +77,7 @@ public class CodesReceived
 
     for (CodeTable codeTable : codeTables.values())
     {
-      String sql = "from CodeReceived where profile = ? and table = ?";
+      String sql = "from CodeReceived where profile = ?0 and table = ?1";
       Query query = session.createQuery(sql);
       query.setParameter(0, profile);
       query.setParameter(1, codeTable);
@@ -240,7 +240,7 @@ public class CodesReceived
           addToCodeTableMapsVaccineProduct(codeTable, query.list(), (SubmitterProfile) session.get(SubmitterProfile.class, 1));
         } else
         {
-          String sql = "from CodeMaster where table = ?";
+          String sql = "from CodeMaster where table = ?0";
           query = session.createQuery(sql);
           query.setParameter(0, codeTable);
           addMastersToCodeTableMaps(codeTable, query.list(), (SubmitterProfile) session.get(SubmitterProfile.class, 1));

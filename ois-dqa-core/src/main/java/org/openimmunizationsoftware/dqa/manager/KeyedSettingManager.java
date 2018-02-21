@@ -63,7 +63,7 @@ public class KeyedSettingManager implements Reload
     Session session = factory.openSession();
     Transaction tx = session.beginTransaction();
     findApplicationToRun(session);
-    Query query = session.createQuery("from KeyedSetting where objectCode = ? and objectId = ?");
+    Query query = session.createQuery("from KeyedSetting where objectCode = ?0 and objectId = ?1");
     query.setParameter(0, "Application");
     query.setParameter(1, application.getApplicationId());
     List<KeyedSetting> keyedSettings = query.list();

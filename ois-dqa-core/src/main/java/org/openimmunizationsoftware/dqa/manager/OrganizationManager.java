@@ -9,7 +9,8 @@ package org.openimmunizationsoftware.dqa.manager;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.AnnotationConfiguration;
+//import org.hibernate.cfg.AnnotationConfiguration;
+import org.hibernate.cfg.Configuration;
 import org.openimmunizationsoftware.dqa.db.model.Organization;
 
 public class OrganizationManager
@@ -24,7 +25,7 @@ public class OrganizationManager
     {
       if (factory == null)
       {
-        factory = new AnnotationConfiguration().configure().buildSessionFactory();
+        factory = new Configuration().configure().buildSessionFactory();
       }
       return factory;
     }
